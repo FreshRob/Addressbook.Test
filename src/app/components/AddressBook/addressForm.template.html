@@ -1,0 +1,12 @@
+<form name="form" ng-if="frm.showForm"> 
+	<input type="text" ng-model="frm.model.firstName" placeholder="First Name" required/> <br/>
+	<input type="text" ng-model="frm.model.lastName" placeholder="Last Name" required/> <br/>
+	<select  ng-model="frm.model.country" ng-options="option.name for option in frm.countries | orderBy: 'name'" required></select> <br/>
+	<input type="text" ng-model="frm.model.postCode" placeholder="Postal Code" required/> <br/>
+	<input type="text" ng-model="frm.model.addrLine1" placeholder="Address Line 1" required/> <br/>
+	<input type="text" ng-model="frm.model.addrLine2" placeholder="Address Line 2" /> <br/>
+	<input type="text" ng-model="frm.model.town" placeholder="Town" required/> <br/>
+	<input type="text" ng-model="frm.model.county" placeholder="County"/> <br/>
+	<button ng-click="frm.saveForm()" ng-disabled="!form.$valid">Save</button>
+	<button ng-click="frm.resetForm()">Reset</button>
+</form>

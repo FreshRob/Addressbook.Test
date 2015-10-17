@@ -4,7 +4,7 @@
 		return{
 			scope: {},
 			restrict: 'E',
-			template: '<div> <button ng-click="vm.newAddress()"> Create New address </button> <address-form show-form="vm.showAddressForm" edit-address="vm.addressToEdit" on-new-record="vm.newRecordCreated"></address-form><div ng-if="!vm.loaded">Loading</div><ul ng-if="vm.loaded"><li ng-repeat="address in vm.addresses track by address.id" address-summary="" address="address" delete-address="vm.deleteAddress(address)" edit-address="vm.editAddress(address)"></li></ul> </div>',
+			templateUrl: '/src/app/components/AddressBook/addressList.template.html',
 			controller: function(){
 				var vm = this;
 				vm.loaded = false;
@@ -31,9 +31,36 @@
 							break;
 						}
 					}
-				});				
-
+					});
 				}
+				vm.setNameStartsWith = function(range){
+					if(!range || typeof range != "string" || range.indexOf('-') < 0){
+						nameStartsWithRegex = undefined;
+						return;
+					}
+
+					nameStartsWithRegex = new RegExp('^[' + range.toLowerCase() + ']', 'i');
+				}	
+
+				var nameStartsWithRegex = undefined;				
+
+				vm.nameCharacterRangeFilterList = [
+					"All",
+					"A-E",
+					"F-K",
+					"L-P",
+					"Q-V",
+					"W-Z"
+				];
+
+				vm.nameStartsWith = function(item){
+					if(typeof nameStartsWithRegex === "undefined" || !nameStartsWithRegex){
+						return true;
+					}
+
+					return nameStartsWithRegex.test(item.firstName) || nameStartsWithRegex.test(item.lastName)
+				}	
+			
 				vm.newRecordCreated = function(address){
 					vm.addresses.push(address)
 				}

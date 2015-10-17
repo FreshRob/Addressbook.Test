@@ -1,0 +1,5 @@
+<div style="display: inline-block;"> {{ ai.address.firstName }} {{ ai.address.lastName }} <br/>
+	{{ ai.address.addrLine1}},<span ng-if="ai.address.addrLine2"> {{ai.address.addrLine2}},</span> {{ai.address.town}},<span ng-if="ai.address.county"> {{ai.address.county}},</span> {{ai.address.postCode}}, {{ai.address.country.name}}
+	<br/>
+	<button ng-click="ai.editAddress()">edit</button> <button ng-click="ai.deleteAddress()">delete</button>
+</div>

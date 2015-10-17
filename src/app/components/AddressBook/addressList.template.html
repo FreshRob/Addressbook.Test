@@ -1,0 +1,11 @@
+<div> 
+	<button ng-click="vm.newAddress()"> Create New address </button> 
+	<address-form show-form="vm.showAddressForm" edit-address="vm.addressToEdit" on-new-record="vm.newRecordCreated"></address-form>
+	<ul><li ng-repeat="characterRange in vm.nameCharacterRangeFilterList" ng-click="vm.setNameStartsWith(characterRange)"> {{ characterRange }} </li></ul>
+	<div ng-if="!vm.loaded">Loading</div>
+	<ul ng-if="vm.loaded" style="-webkit-column-count: 2">
+		<li style="list-style-type:none;padding: 0; margin: 0;" ng-style="{'-webkit-column-span': (($index > vm.addresses.length / 2) ? '2' : '1')}" ng-repeat="address in vm.addresses |filter: vm.nameStartsWith | orderBy:'firstName' as addressResult" address-summary="" address="address" delete-address="vm.deleteAddress(address)" edit-address="vm.editAddress(address)">
+		</li>
+		<li ng-if="addressResult.length == 0"> No Results </li> 
+	</ul> 
+</div>

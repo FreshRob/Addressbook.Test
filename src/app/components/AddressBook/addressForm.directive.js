@@ -4,10 +4,14 @@
 		return{
 			scope: { editAddress: '=', onNewRecord: '=', showForm: '='},
 			restrict: 'EA',
-			template: '<form ng-if="frm.showForm"> <input type="text" ng-model="frm.model.firstName" required/> <button ng-click="frm.saveForm()">Save</button></form>',
+			templateUrl: '/src/app/components/AddressBook/addressForm.template.html',
 			controller: ['$scope', function($scope){
 				var vm = this;
 				vm.model = populateFormModel(vm.editAddress);
+				vm.countries = [{id: 1, name: 'United Kingdom'}, {id: 2, name: 'Ireland'}];
+				vm.resetForm = function(){
+						vm.model = populateFormModel(vm.editAddress);
+				}
 				vm.saveForm = function(){
 
 					if(typeof vm.model.id  == 'number' && vm.model.id > -1){
@@ -27,9 +31,7 @@
 					});
 
 				}
-				$scope.$watch('frm.editAddress', function(newRecord, oldRecord){
-						vm.model = populateFormModel(vm.editAddress);
-				}, true)
+				$scope.$watch('frm.editAddress', vm.resetForm , true);
 			}],
 			controllerAs: 'frm',
         	bindToController: true

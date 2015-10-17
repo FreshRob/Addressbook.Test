@@ -6,7 +6,7 @@
 					  editAddress: '&',
 					  deleteAddress: '&'},
 			restrict: 'EA',
-			template: '<div> {{ ai.address.firstName }} {{ ai.address.lastName }} <button ng-click="ai.editAddress()">edit</button> <button ng-click="ai.deleteAddress()">delete</button></div>',
+			templateUrl: '/src/app/components/AddressBook/addressSummary.template.html',
 			controller: function(){
 				var vm = this;
 			},
