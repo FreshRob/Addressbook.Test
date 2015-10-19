@@ -1,5 +1,9 @@
-<div style="display: inline-block;"> {{ ai.address.firstName }} {{ ai.address.lastName }} <br/>
+<p style="display: inline-block;padding: 20px"> <span class="address-name">{{ ai.address.firstName }} {{ ai.address.lastName }} </span> <br/>
+	<span class="address-preview">
 	{{ ai.address.addrLine1}},<span ng-if="ai.address.addrLine2"> {{ai.address.addrLine2}},</span> {{ai.address.town}},<span ng-if="ai.address.county"> {{ai.address.county}},</span> {{ai.address.postCode}}, {{ai.address.country.name}}
-	<br/>
-	<button ng-click="ai.editAddress()">edit</button> <button ng-click="ai.deleteAddress()">delete</button>
-</div>
+	</span><br/>
+	<div class="address-tools">
+		<a class="address-tool ed" ng-click="ai.editAddress()">edit</a> 
+		<button ng-click="ai.deleteAddress()">delete</button>
+	</div>
+</p>

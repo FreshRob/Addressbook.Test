@@ -1,11 +1,20 @@
 <div id="address-book"> 
-	<img ng-click="vm.newAddress()" class="top" src="/public/img/buttons/account/btn_addaddress.png" border="0" alt="Add Address">
+	<div class="grid_6">
+		<img ng-click="vm.newAddress()" class="top" src="/public/img/buttons/account/btn_addaddress.png" border="0" alt="Add Address">
+	</div>
 	<address-form show-form="vm.showAddressForm" edit-address="vm.addressToEdit" on-new-record="vm.newRecordCreated"></address-form>
-	<div class="grid_6 alphatabs"><a ng-repeat="characterRange in vm.nameCharacterRangeFilterList" ng-click="vm.setNameStartsWith(characterRange)"> {{ characterRange }} </a></div>
-	<div ng-if="!vm.loaded">Loading</div>
-	<ul ng-if="vm.loaded" style="-webkit-column-count: 2">
-		<li style="list-style-type:none;padding: 0; margin: 0;" ng-style="{'-webkit-column-span': (($index > vm.addresses.length / 2) ? '2' : '1')}" ng-repeat="address in vm.addresses |filter: vm.nameStartsWith | orderBy:'firstName' as addressResult" address-summary="" address="address" delete-address="vm.deleteAddress(address)" edit-address="vm.editAddress(address)">
-		</li>
-		<li ng-if="addressResult.length == 0"> No Results </li> 
-	</ul> 
+	<div style="float:right" class="grid_6 alphatabs"><a style="float:left" ng-repeat="characterRange in vm.nameCharacterRangeFilterList" ng-click="vm.setNameStartsWith(characterRange)"> {{ characterRange }} </a></div>
+	<div class="grid_12 titles">
+		<p style="font-size:16px; text-shadow:0px 0px 1px rgba(255,255,255,.3);">Last postcard</p>
+	</div>
+	<div style="clear:both"></div>
+	<div style="width: 100%">
+		<div ng-if="!vm.loaded">Loading</div>
+		<ul class="addresses" ng-if="vm.loaded" style="-webkit-column-count: 2" >
+			<li class="address" style="width: 100% !important; height: auto !important; list-style-type:none;padding: 0; margin: 0;" ng-style="{'-webkit-column-span': (addressResult.length == 1) ? 'all' : (($index > vm.addresses.length / 2) ? '2' : '1')}" ng-repeat="address in vm.addresses |filter: vm.nameStartsWith | orderBy:'firstName' as addressResult" address-summary="" address="address" delete-address="vm.deleteAddress(address)" edit-address="vm.editAddress(address)">
+			</li>
+			<li ng-if="addressResult.length == 0"> No Results </li> 
+		</ul> 
+	</div>
+
 </div>

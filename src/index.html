@@ -2,12 +2,36 @@
 <html lang="en" ng-app="yg">
   <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>address test</title>
     <link type="text/css" rel="stylesheet" href="/public/min/b=public/css&f=reset.css,layouts/261012default.css,grid.css,addressbook/index_new.css"/><link rel="stylesheet" type="text/css" href="/public/css/account/account.css" />
 <link rel="stylesheet" type="text/css" href="/public/css/addressbook/index.css" />
+<link rel="stylesheet" type="text/css" href="/public/min/b=public/css&f=reset.css,layouts/261012default.css,grid.css,addressbook/index_new.css" />
   </head>
   <body>
-    <section ng-view=""></section>
+    <div id="wrapper">
+<!-- NAVIGATION -->
+  <div id="navigationwrap">
+    <div id="navigation">
+      <div class="tnlogo">
+        <a href="https://www.touchnote.com/" class="Tn-logo" title="Touchnote"></a>
+      </div>
+      <div id="basket-text"></div>
+            <div class="navbar">
+        <ul id="main-navi">
+                    <li style="margin-right:0;"><span class="header-link"><a id="ga-signOutFromHeader" href="https://www.facebook.com/logout.php?next=http%3A%2F%2Fwww.touchnote.com%2Fusers%2Fsignout&amp;access_token=CAAAADIjQZARkBABlcUOnfN8nO4DQROcUi6JnMVvrrsZCrjrcsp6l24QwTOuy6EOEfj3KmOXXzPgptB6r6cRqBAYPr4dT8vqnucEyOdjDfLib3Nwwdm4pXqZAGrUoh1ZCMrrmvO7cYZBBZAdO6ll24ubJ3fX9gQVfrZA96EoSsOqHjIIVD5HBPMV" title="Sign out"><span style="">Sign out</span></a></span></li>
+                    <li><a id="ga-productsOverviewFromHeader" href="//www.touchnote.com/cards" title="Take a look at our cards">Our cards</a></li>
+          <li><a id="ga-appsFromHeader" href="//www.touchnote.com/mobile" title="Send cards directly from your mobile">Mobile apps</a></li>
+          <li><a id="ga-sendaPcFromHeader" href="//www.touchnote.com/personalise" title="Start making your postcard">Start a postcard</a></li>
+          <li><a id="ga-SendaGcFromHeader" href="//www.touchnote.com/tn/create" title="Start making your Greeting card">Start a greeting card</a></li>
+          <li style="list-style-image:none;"><a id="ga-accountHomeFromHeader" href="//www.touchnote.com/account/home">My Account</a></li>
+        </ul>
+      </div>
+          </div>
+  </div>
+</div>
+<div id="content">
+    <section class="accountholder" ng-view=""></section>
+  </div>
      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js" type="text/javascript"></script>   
     <script src="/src/app/components/addressBook/addressBook.module.js" type="text/javascript"/></script>

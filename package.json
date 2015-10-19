@@ -1,12 +1,12 @@
 {
-  "name": "surveydirective",
+  "name": "AnddressBook",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {},
   "devDependencies": {
-    "angular": "^1.4.6",
-    "angular-mocks": "^1.4.6",
+    "angular": "1.4.6",
+    "angular-mocks": "1.4.6",
     "express": "^4.13.3",
     "express-http-proxy": "^0.6.0",
     "http-server": "^0.8.5",

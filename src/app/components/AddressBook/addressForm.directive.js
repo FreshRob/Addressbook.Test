@@ -8,7 +8,7 @@
 			controller: ['$scope', function($scope){
 				var vm = this;
 				vm.model = populateFormModel(vm.editAddress);
-				vm.countries = [{id: 1, name: 'United Kingdom'}, {id: 2, name: 'Ireland'}];
+				vm.countries = [{id: 1, name: 'United Kingdom'}, {id: 2, name: 'Ireland'}, {id: 3, name: 'France'}, {id: 4, name: 'Germany'}];
 				vm.resetForm = function(){
 						vm.model = populateFormModel(vm.editAddress);
 				}
