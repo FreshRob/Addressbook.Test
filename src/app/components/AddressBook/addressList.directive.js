@@ -4,7 +4,7 @@
 		return{
 			scope: {},
 			restrict: 'E',
-			templateUrl: '/src/app/components/AddressBook/addressList.template.html',
+			templateUrl: 'app/components/AddressBook/addressList.template.html',
 			controller: function(){
 				var vm = this;
 				vm.loaded = false;

@@ -4,7 +4,7 @@
 		return{
 			scope: { editAddress: '=', onNewRecord: '=', showForm: '='},
 			restrict: 'EA',
-			templateUrl: '/src/app/components/AddressBook/addressForm.template.html',
+			templateUrl: 'app/components/AddressBook/addressForm.template.html',
 			controller: ['$scope', function($scope){
 				var vm = this;
 				vm.model = populateFormModel(vm.editAddress);

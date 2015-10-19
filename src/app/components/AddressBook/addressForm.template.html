@@ -1,6 +1,6 @@
 <form name="form" ng-if="frm.showForm" style="width:100%; clear:both;"> 
 	First name * <input type="text" ng-model="frm.model.firstName" placeholder="First Name" required/> <br/>
-	Last name *<input type="text" ng-model="frm.model.lastName" placeholder="Last Name" required/> <br/>
+	Last name * <input type="text" ng-model="frm.model.lastName" placeholder="Last Name" required/> <br/>
 	Country* <select  ng-model="frm.model.country" ng-options="option.name for option in frm.countries | orderBy: 'name'" required></select> <br/>
 	Postal Code* <input type="text" ng-model="frm.model.postCode" placeholder="Postal Code" required/> <br/>
 	Address Line 1* <input type="text" ng-model="frm.model.addrLine1" placeholder="Address Line 1" required/> <br/>

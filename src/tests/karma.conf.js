@@ -7,16 +7,16 @@ module.exports = function(config){
       'node_modules/angular/angular.js',
       'node_modules/angular-route/angular-route.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'src/app/**/*.js',
-      'src/tests/**/*.js',
-      'src/app/**/*.html'
+      'src/app/**/*.js',      
+      'src/app/**/*.html',
+      'src/tests/**/*.js',      
     ],
     exclude: [
       'src/tests/karma.conf.js',
       'src/app/app.js',
     ],
     preprocessors: {
-      //'src/app/**/*.js': ['coverage'],
+      'src/app/**/*.js': ['coverage'],
       'src/app/**/*.html': ['ng-html2js']
     },
     

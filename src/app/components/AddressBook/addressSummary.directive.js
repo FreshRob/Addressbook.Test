@@ -6,7 +6,7 @@
 					  editAddress: '&',
 					  deleteAddress: '&'},
 			restrict: 'EA',
-			templateUrl: '/src/app/components/AddressBook/addressSummary.template.html',
+			templateUrl: 'app/components/AddressBook/addressSummary.template.html',
 			controller: function(){
 				var vm = this;
 			},
